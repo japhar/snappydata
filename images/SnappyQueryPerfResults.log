@@ -1,0 +1,68 @@
+
+Time taken to load data into airline table = 133452 ms
+
+Query: select AVG(ArrDelay) arrivalDelay, UniqueCarrier carrier from snappy_perf_test.airline group by UniqueCarrier order by arrivalDelay
++-------------------+-------+
+|       ARRIVALDELAY|CARRIER|
++-------------------+-------+
+|-1.5950957940010053|     AQ|
+|0.45589069121730236|     HA|
+|  2.243114109050028|     AS|
+|  3.992245720308308|     US|
+|  4.067925562217487|     WN|
+|  4.302368189571801|     9E|
+|  4.709055325961274|     DL|
+|  5.389661868804904|     UA|
+|  5.498418106595278|     VX|
+|  5.754517632187605|     FL|
+|  5.973990640551341|     OO|
+|  6.405406332838625|     F9|
+|  7.378321329269879|     YV|
+|  7.676926492597038|     CO|
+|  8.064664368744626|     MQ|
+|  8.290224567239337|     AA|
+|  8.655506823312866|     NW|
+|  8.716433774769778|     XE|
+|  8.749353671642247|     B6|
+|   9.79991285839734|     EV|
+| 11.040092474806633|     OH|
++-------------------+-------+
+
+Time Taken to execute query = 161774 ms
+
+
+Query: select AVG(ArrDelay) ArrivalDelay, Year from snappy_perf_test.airline group by Year order by Year
++-----------------+----+
+|     ARRIVALDELAY|YEAR|
++-----------------+----+
+|10.19218057072105|2007|
+| 8.16845238729114|2008|
+|4.710578059729143|2009|
+|4.020227540058576|2010|
+|4.597150238419557|2011|
+| 0.35829649601884|2012|
++-----------------+----+
+
+Time Taken to execute query = 156124 ms
+
+
+Query: select ArrDelay arrivalDelay from snappy_perf_test.airline where UniqueCarrier = 'US' AND FLIGHTNUM = 401 AND MONTH = 12 AND YEAR = 2010 AND DAYOFMONTH = 1
++-----------------+
+|     ARRIVALDELAY|
++-----------------+
+|               46|
++-----------------+
+
+Time Taken to execute query = 224615 ms
+
+
+Query: select WeatherDelay from snappy_perf_test.airline where UniqueCarrier = 'MQ' AND FLIGHTNUM = 2718 AND  MONTH = 1 AND YEAR = 2011 AND WeatherDelay <> 0
+
++-----------------+
+|     WEATHERDELAY|
++-----------------+
+|                2|
+|               15|
++-----------------+
+
+Time Taken to execute query = 230834 ms
