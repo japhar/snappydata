@@ -11,13 +11,13 @@ Purpose of this project is to benchmark SnappyData & Cassandra with Spark.
 |:------------------|:-------------|
 | Mac OS     |  4 GB RAM 500 GB HD   | 
 
-For benchmark testing, downloaded Airlines dataset which has 32+ million records (approximately 15GB) and compressed parquet files are nearl 1 GB.
+For benchmark testing, downloaded Airlines dataset which has 32+ million records (approximately 15GB) and compressed parquet files are nearly 1 GB.
 
 ### IDE: IntelliJ
 
-<p align="center"><img width="60%" height="60%" src="images/Screen Shot 2018-03-13 at 10.28.22 PM.png" align="middle"> </br></p>
+<p align="center"><img width="80%" height="80%" src="images/Screen Shot 2018-03-13 at 10.28.22 PM.png" align="middle"> </br></p>
 
-<p align="center"><img width="60%" height="60%" src="images/spark_submit_output.png" align="middle"> </br></p>
+<p align="center"><img width="80%" height="80%" src="images/spark_submit_output.png" align="middle"> </br></p>
 
 ### Snappy Data Ouput Log:
 
@@ -25,7 +25,7 @@ For benchmark testing, downloaded Airlines dataset which has 32+ million records
 
 ### Comparision Stats
 
-<p align="center"><img width="60%" height="60%" src="images/Summary_Stats.png" align="middle"> </br></p>
+<p align="center"><img width="80%" height="80%" src="images/Summary_Stats.png" align="middle"> </br></p>
 
 ````
 //SnappyData Spark-Submit command
