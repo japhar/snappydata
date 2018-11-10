@@ -52,12 +52,11 @@ spark-submit \
 
 ### Note:
 
-I couldn't able to generate stats for Spark Cassandra due to below error.
+Couldn't able to generate stats for Spark Cassandra due to below error.
 
 2018-03-12 20:18:23 INFO  DAGScheduler:54 - ResultStage 1 (take at CassandraRDD.scala:127) failed in 0.467 s due to Job aborted due to stage failure: Task 0 in stage 1.0 failed 1 times, most recent failure: Lost task 0.0 in stage 1.0 (TID 1, localhost, executor driver): java.io.IOException: Exception during preparation of SELECT "UniqueCarrier", "id", "ActualElapsedTime", "AirTime", "ArrDelay", "ArrDelaySlot", "ArrTime", "CRSArrTime", "CRSDepTime", "CRSElapsedTime", "CancellationCode", "Cancelled", "CarrierDelay", "DayOfMonth", "DayOfWeek", "DepDelay", "DepTime", "Dest", "Distance", "Diverted", "FlightNum", "LateAircraftDelay", "Month", "NASDelay", "Origin", "SecurityDelay", "TailNum", "TaxiIn", "TaxiOut", "WeatherDelay", "Year" FROM "snappy_perf_test"."airline" WHERE token("UniqueCarrier") > ? AND token("UniqueCarrier") <= ?  LIMIT 1 ALLOW FILTERING: org/apache/spark/sql/catalyst/package$ScalaReflectionLock$
 	at com.datastax.spark.connector.rdd.CassandraTableScanRDD.createStatement(CassandraTableScanRDD.scala:323)
 	at com.datastax.spark.connector.rdd.CassandraTableScanRDD.com$datastax$spark$connector$rdd$CassandraTableScanRDD$$fetchTokenRange(CassandraTableScanRDD.scala:339)
 
-I've tried a lot to resolve above error but there was no luck. For a plain table (i.e. without PRIMAYKEY & CLUSTINGKEY) the code was working fine. When we working on larget dataset like 32+ million, I felt we can't go without PRIMARYKEY & CLUSTERINGKEYS.
+Tried a lot to resolve above error but there was no luck. For a plain table (i.e. without PRIMAYKEY & CLUSTINGKEY) the code was working fine. When we working on larget dataset like 32+ million, I felt we can't go without PRIMARYKEY & CLUSTERINGKEYS.
 
-Also, all required installtions are done on my Mac (i.e. 4 GB RAM) so that I can use SnappyData/Cassandra for further analysis.
